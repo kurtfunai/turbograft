@@ -22,6 +22,10 @@ TurboGraft.handlers.partialGraftClickHandler = (ev) ->
 
 TurboGraft.handlers.remoteMethodHandler = (ev) ->
   target = ev.target
+  while target && !target.getAttribute("remote-method")
+    target = target.parentElement
+
+  return unless target
   httpRequestType = target.getAttribute('remote-method')
   return unless httpRequestType
   ev.preventDefault()
@@ -45,15 +49,8 @@ TurboGraft.handlers.remoteMethodHandler = (ev) ->
   remote = new TurboGraft.Remote(options, null, target)
   return
 
-closest = (el, attr) ->
-  return el if el.getAttribute(attr)?
-  while el = el.parentNode
-    return el if el.getAttribute(attr)?
-
-  null
-
 TurboGraft.handlers.remoteFormHandler = (ev) ->
-  target = closest(ev.target, "remote-method")
+  target = ev.target
   return unless target?
 
   ev.preventDefault()

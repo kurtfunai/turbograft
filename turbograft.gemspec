@@ -6,7 +6,7 @@ require 'turbograft/version'
 Gem::Specification.new do |spec|
   spec.name          = "turbograft"
   spec.version       = TurboGraft::VERSION
-  spec.authors       = ["Kristian Plettenberg-Dussault", "Justin Li", "Nicholas Simmons", "Tyler Mercier", "Anthony Cameron", "Patrick Donovan"]
+  spec.authors       = ["Kristian Plettenberg-Dussault", "Justin Li", "Nicholas Simmons", "Tyler Mercier", "Anthony Cameron", "Patrick Donovan", "David Muto"]
   spec.email         = ["tylermercier@gmail.com"]
   spec.summary       = "turbolinks with partial page replacement"
   spec.description   = "It's like turbolinks, but with partial page replacement and tests"
