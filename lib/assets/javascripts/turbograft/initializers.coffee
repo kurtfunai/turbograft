@@ -45,9 +45,17 @@ TurboGraft.handlers.remoteMethodHandler = (ev) ->
   remote = new TurboGraft.Remote(options, null, target)
   return
 
+closest = (el, attr) ->
+  return el if el.getAttribute(attr)?
+  while el = el.parentNode
+    return el if el.getAttribute(attr)?
+
+  null
+
 TurboGraft.handlers.remoteFormHandler = (ev) ->
-  target = ev.target
-  return unless target.getAttribute('remote-form')?
+  target = closest(ev.target, "remote-method")
+  return unless target?
+
   ev.preventDefault()
   httpUrl = target.getAttribute('action')
   httpRequestType = target.getAttribute('method')

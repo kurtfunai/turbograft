@@ -58,6 +58,26 @@ describe 'Initializers', ->
         refreshOnSuccess: "foo"
         refreshOnError: "bar"
 
+    #it 'creates a remote when contained within a remote-method link', ->
+      #$link = $("<a>")
+        #.attr("remote-method", "GET")
+        #.attr("refresh-on-success", "foo")
+        #.attr("refresh-on-error", "bar")
+        #.attr("href", "somewhere")
+
+      #$icon = $("<i>").addClass("fa fa-cogs")
+      #$link.append($icon)
+
+      #$("body").append($link)
+      #$icon[0].click()
+
+      #assert @Remote.calledWith
+        #httpRequestType: "GET"
+        #httpUrl: "somewhere"
+        #fullRefresh: false
+        #refreshOnSuccess: "foo"
+        #refreshOnError: "bar"
+
     it 'passes through null for missing refresh-on-success', ->
       $link = $("<a>")
         .attr("remote-method", "GET")
